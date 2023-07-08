@@ -38,3 +38,14 @@ func DomainForLocale(domain string, locale string) string {
 
 	return fmt.Sprintf("en.%s", domain)
 }
+
+func ModifySpaces(s, mode string) string {
+	switch mode {
+		case "dash": 
+			return strings.ReplaceAll(s, " ", "-")
+		case "underscore": 
+			return strings.ReplaceAll(s, " ", "_")
+		default: 
+			return strings.ReplaceAll(s, " ", "*")	
+	}
+}
