@@ -70,3 +70,20 @@ func Validate(req UserCreateRequest) string {
 
 	return ""
 }
+
+func ErrorMessageToCode(msg string) int {
+	const (
+		OK = iota
+		CANCELLED
+		UNKNOWN
+	)
+
+	switch msg {
+		case "OK":
+			return OK
+		case "CANCELLED":
+			return CANCELLED
+		default:
+			return UNKNOWN
+	}
+}
