@@ -49,3 +49,24 @@ func ModifySpaces(s, mode string) string {
 			return strings.ReplaceAll(s, " ", "*")	
 	}
 }
+
+type UserCreateRequest struct {
+	FirstName string
+	Age       int
+}
+
+func Validate(req UserCreateRequest) string {
+	message := "invalid request"
+
+	// валидация имени
+	if (req.FirstName == "" || strings.Contains(req.FirstName, " ")) {
+		return message
+	}
+
+	// валидация возраста
+	if (req.Age <= 0 || req.Age > 150) {
+		return message
+	}
+
+	return ""
+}
