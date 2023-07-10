@@ -87,3 +87,11 @@ func ErrorMessageToCode(msg string) int {
 			return UNKNOWN
 	}
 }
+
+func SafeWrite(nums [5]int, i, val int) [5]int {
+	if (i < 0 || i > (len(nums) - 1)) {
+		return nums
+	}
+	nums[i] = val
+	return nums
+}
