@@ -95,3 +95,15 @@ func SafeWrite(nums [5]int, i, val int) [5]int {
 	nums[i] = val
 	return nums
 }
+
+func Remove(nums []int, i int) []int {
+	if (i < 0 || i > (len(nums) - 1)) {
+		return nums
+	}
+
+	result := []int{}
+	result = append(result, nums[:i]...)
+	result = append(result, nums[i+1:]...)
+
+	return result
+}
