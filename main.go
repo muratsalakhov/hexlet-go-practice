@@ -107,3 +107,12 @@ func Remove(nums []int, i int) []int {
 
 	return result
 }
+
+func Map(strs []string, mapFunc func(s string) string) []string {
+	result := make([]string, len(strs))
+	for i, s := range strs {
+		result[i] = mapFunc(s)
+	}
+
+	return result
+}
